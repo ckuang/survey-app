@@ -7,6 +7,10 @@ You should be able to do the following things with your application.
 * Answer any Question that was created. 
 * See all the Responses.
 
+## Setting up 
+* `$ npm install`
+* `$ webpack -w`
+* `$ nodemon server.js`
 
 ## FrontEnd Explanation
 ### App Component
@@ -33,7 +37,6 @@ Fetches all responses from the database and displays the question and choice sel
 Here are some high-level steps to help you approach the project.
 * 1) Set up the Express server with all the routes. 
   - `/server.js`
-  - `/routes/api.js`
 * 2) Test to see that each route works using Postman.  
 * 3) Set up the Sequelize database connection.
   - `/server.js` 
@@ -41,7 +44,7 @@ Here are some high-level steps to help you approach the project.
   - `models/question.js`
   - `models/response.js` 
 * 5) Place Sequelize functions inside of the corresponding routes. For example, if you want to create a new `Question`, the Sequelize create function should be called within the `POST` - `/api/question` API endpoint.
-  - `routes/api.js` 
+  - `server.js` 
 * 6) Make sure you know what you are sending over in the response on the backend.
   **hint: you may need to JSON.stringify(data) before sending off in the response**
 
@@ -51,8 +54,6 @@ Here are some high-level steps to help you approach the project.
   - `/api/question`
 * `GET` API endpoint to retrieve all Responses
   - `/api/response`
-* `GET` API endpoint to display an `index.html` page
-  - `/*`
 * `POST` API endpoint to create a Question
   - `/api/question`
 * `POST` API endpoint to create a Response

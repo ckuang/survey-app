@@ -2,20 +2,18 @@ var express = require('express')
 var app = express()
 var bodyparser = require('body-parser')
 var path = require('path')
-var apiRouter = require('./routes/api.js')
-var db = require('./models')
+var Sequelize = require('sequelize') 
 
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json())
 app.use(express.static('public'))
 
-
-app.use(apiRouter)
+var sequelizeConnection = new Sequelize('postgres://Kuang@localhost:5432/surveyapp');
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, '/views/index.html'))
 })
 
-db.sequelize.sync().then(function() {
+sequelizeConnection.sync().then(function() {
   app.listen(3000)
 })
