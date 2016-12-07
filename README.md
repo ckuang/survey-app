@@ -23,19 +23,19 @@ Fetches all responses from the database and displays the question and choice sel
 
 
 ## Instructions
-Here are some steps to help you approach the project. <br/>
-1) Set up the Express server with all the routes. 
-  * `/server.js`
-  * `/routes/api.js` <br/>
-2) Test to see that each route works using Postman.  <br/>
-3) Set up the Sequelize database connection.
-  * `/server.js` <br/>
-4) Generate the schema for the two models. 
-  * `models/question.js`
-  * `models/response.js` <br/>
-5) Place Sequelize functions inside of the corresponding routes. For example, if you want to create a new `Question`, the Sequelize create function should be called within the `POST` - `/api/question` API endpoint.
-  * `routes/api.js` <br/>
-6) Make sure you know what you are sending over in the response on the backend.
+Here are some steps to help you approach the project.
+* 1) Set up the Express server with all the routes. 
+  - `/server.js`
+  - `/routes/api.js`
+* 2) Test to see that each route works using Postman.  
+* 3) Set up the Sequelize database connection.
+  - `/server.js` 
+* 4) Generate the schema for the two models. 
+  - `models/question.js`
+  - `models/response.js` 
+* 5) Place Sequelize functions inside of the corresponding routes. For example, if you want to create a new `Question`, the Sequelize create function should be called within the `POST` - `/api/question` API endpoint.
+  - `routes/api.js` 
+* 6) Make sure you know what you are sending over in the response on the backend.
   **hint: you may need to JSON.stringify(data) before sending off in the response**
 
 ## Grading Rubric
