@@ -12,6 +12,10 @@ app.use(express.static('public'))
 
 app.use(apiRouter)
 
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, '/views/index.html'))
+})
+
 db.sequelize.sync().then(function() {
   app.listen(3000)
 })

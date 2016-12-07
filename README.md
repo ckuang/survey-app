@@ -1,6 +1,13 @@
 # Survey App
 We're going to create a backend for an already existing frontend.
 
+## Overview 
+You should be able to do the following things with your application.
+* Make a new Question.
+* Answer any Question that was created. 
+* See all the Responses.
+
+
 ## FrontEnd Explanation
 ### App Component
 The app has a navigation bar that brings you to three pages.
@@ -23,7 +30,7 @@ Fetches all responses from the database and displays the question and choice sel
 
 
 ## Instructions
-Here are some steps to help you approach the project.
+Here are some high-level steps to help you approach the project.
 * 1) Set up the Express server with all the routes. 
   - `/server.js`
   - `/routes/api.js`
