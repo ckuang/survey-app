@@ -1,5 +1,9 @@
 # Survey App
-We're going to create a backend for an already existing frontend.
+We're going to create a backend for an already existing survey app frontend. Basically, the app will let you create survey questions, and then take the survey by answering the questions.
+
+Your goal is to create an express server with four different routes (GET questions, POST question, GET answers, POST answer) and models for questions and answers. 
+
+The React frontend is mostly setup, but you will have to make a few changes to make sure your data is showing up properly.
 
 ## Overview 
 You should be able to do the following things with your application.
@@ -10,6 +14,8 @@ You should be able to do the following things with your application.
 ## Setting up 
 * `$ npm install`
 * `$ webpack -w`
+* MAKE A DATABASE called `surveyapp`
+* CHANGE THE SEQUELIZE CONNECTION URI TO REFLECT YOUR NAME
 * `$ nodemon server.js`
 
 ## FrontEnd Explanation
@@ -40,7 +46,7 @@ Here are some high-level steps to help you approach the project.
 * 2) Test to see that each route works using Postman.  
 * 3) Set up the Sequelize database connection.
   - `/server.js` 
-* 4) Generate the schema for the two models. 
+* 4) Generate the schema for the two models. **You have to create an association between Question and Response.**
   - `models/question.js`
   - `models/response.js` 
 * 5) Place Sequelize functions inside of the corresponding routes. For example, if you want to create a new `Question`, the Sequelize create function should be called within the `POST` - `/api/question` API endpoint.
