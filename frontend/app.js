@@ -10,9 +10,9 @@ var App = React.createClass({
   render: function() {
     return(
       <div>
-        <Link to='/create'>Create</Link> <br/>
-        <Link to='/questions'>Answer</Link> <br/>
-        <Link to='/results'>See Results</Link> <br/>
+        <Link to='/create'>Create a new Question</Link> <br/>
+        <Link to='/questions'>Answer Questions</Link> <br/>
+        <Link to='/results'>See Responses</Link> <br/>
         {this.props.children}
       </div>
     )
