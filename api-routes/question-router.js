@@ -21,8 +21,12 @@ function getQuestions(req, res){
 
 function postQuestions(req, res){
 	Question.create({
-			question: req.body.question
-		})
+		question: req.body.question,
+		Choice1: req.body.Choice1,
+ 		Choice2: req.body.Choice2,
+ 		Choice3: req.body.Choice3,
+ 		Choice4: req.body.Choice4
+ 	})
 		.then((question) => {
 			res.json(question)
 		})

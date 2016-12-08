@@ -5,13 +5,14 @@ var Create = React.createClass({
     return({question: null, one: null, two: null, three: null, four: null})
   },
   makeQuestion: function (e) {
+    var that = this
     var info = this.state
     $.ajax({
       url: "/api/question",
       type: "POST",
       data: info,
       success: function(data) {
-        console.log(data)
+        that.setState(data)
       }
     })
   },
@@ -38,7 +39,7 @@ var Create = React.createClass({
           <input type="text" placeholder="question" onChange={this.updateQuestion}></input><br/>
           Write your first answer choice here:
           <input type="text" placeholder="choice1" onChange={this.updateChoice1}></input><br/>
-          Write your second answer choice here:  
+          Write your second answer choice here:
           <input type="text" placeholder="choice2" onChange={this.updateChoice2}></input><br/>
           Write your third answer choice here:
           <input type="text" placeholder="choice3" onChange={this.updateChoice3}></input><br/>

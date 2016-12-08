@@ -6,8 +6,11 @@ var Question = require("../models/question");
 Question.sync({force: true})
 //addinf 3 test questions to database:
 .then(() => Question.bulkCreate([
-  {question: 'Is sequelize working?'},
-  {question: "Why isn't sequelize working?"},
-  {question: 'Oh God, what have I done?'},
+  {question: 'Is sequelize working?',
+	 choice1: 'No, go read documentation.',
+     choice2: "No, go debug your code line by line.",
+     choice3: 'Maybe... wait no. Start over.',
+     choice4: 'Sequelize has betrayed you.'},
+
 ]))
 .catch((err) => console.log(err));

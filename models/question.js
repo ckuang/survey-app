@@ -8,7 +8,22 @@ var Question = sequelizeConnection.define('question',{
 		validate: {
 			len: [1, 250], notEmpty: true
 		}
-	}
+	},
+	Choice1: {
+    	type: Sequelize.STRING,
+   },
+
+   Choice2: {
+		type: Sequelize.STRING,
+   },
+
+   Choice3: {
+		type: Sequelize.STRING,
+   },
+
+   Choice4: {
+     	type: Sequelize.STRING,
+   }
 
 });
 
