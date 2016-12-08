@@ -1,15 +1,18 @@
-var sequelize = require('sequelize');
-// const sequelizeConnection = require('');
+var Sequelize = require('sequelize');
+var sequelizeConnection = require('../db');
+
+var Question = require('./question')
 
 var Response = sequelizeConnection.define('response', {
   choice: {
-    type: sequelize.STRING
+    type: Sequelize.STRING
   },
-  QuestionID: {
-    Sequelize.INTEGER
+  questionId: {
+    type: Sequelize.INTEGER
   }
 })
 
-Response.belongsTo(Question)
-Question.belongsToMany(through: 'QuesResponses')
+Response.belongsTo(Question);
+Question.belongsToMany(Response, {through: 'QuesResponses'});
+
 module.exports = Response;

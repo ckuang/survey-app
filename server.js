@@ -3,15 +3,16 @@ var app = express()
 var bodyparser = require('body-parser')
 var path = require('path')
 var Sequelize = require('sequelize')
+var sequelizeConnection = require('./db')
 
-// var Question = require('./models/question');
-// var Response = require('./models/response');
+var Question = require('./models/question');
+var Response = require('./models/response');
 
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json())
 app.use(express.static('public'))
 
-var sequelizeConnection = new Sequelize('postgres://Carlos@localhost:5432/surveyapp');
+// var sequelizeConnection = new Sequelize('postgres://Carlos@localhost:5432/surveyapp');
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, '/views/index.html'))
@@ -49,5 +50,3 @@ app.post('/api/question', (req, res) => {
     res.send(data)
   })
 })
-
-module.exports = sequelizeConnection;
