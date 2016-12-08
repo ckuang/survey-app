@@ -29,8 +29,25 @@ app.get('/api/response', function(req, res) {
   res.sedFile(path.join(__dirname, '/models/response.js'))
 })
 
+
+// ******** NOT SURE ABOUT THESE ROUTES **************
+
+
+// app.get('/question', function(req, res){
+//  Question.findAll({}).then((question) => {
+//      res.send(question)
+//  })
+// })
+
+
+// app.get('/response', function(req, res){
+//  Response.findAll({}).then((response) => {
+//      res.send(response)
+//  })
+// })
+
 app.get('/api/question:id', function(req, res) {
-  Song.findById(req.params.id).then((question) => {
+  Question.findById(req.params.id).then((question) => {
     res.send(question)
   })
 })
