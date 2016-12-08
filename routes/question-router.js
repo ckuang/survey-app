@@ -9,7 +9,7 @@ const Question = require('../models/question.js')
 const createQuestion = (req,res) => {
 	console.log('data ')
 	Question.create({
-		question: req.body.question
+		question: req.body.question,
 		choiceOne: req.body.questionchoiceOne,
 		choiceTwo: req.body.questionchoiceTwo,
 		choiceThree: req.body.questionchoiceThree,
