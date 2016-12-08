@@ -11,7 +11,7 @@ var Results = React.createClass({
       url: '/api/response',
       success: function(data) {
         that.setState({responses: JSON.parse(data)})
-      }
+      } 
     })
   },
   render: function() {
@@ -20,7 +20,7 @@ var Results = React.createClass({
     return (
       <div>
         {responses.map(function(response, idx){
-          var question = response.Question.question
+          var question = response.response
           var response = response.choice
           return(
             <div key={idx}> {question} : <strong>{response}</strong></div>
