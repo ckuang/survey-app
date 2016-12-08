@@ -26,7 +26,7 @@ var Answer = React.createClass({
         </div>
       )
     } else {
-      return (<div></div>)
+      return (<div> error </div>)
     }
   }
 })

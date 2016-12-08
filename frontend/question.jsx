@@ -22,6 +22,7 @@ var Question = React.createClass({
   render: function() {
     var question = this.props.question
     return(
+      <div>
       <form onSubmit={this.answerQuestion}>
         {question.question}<br/>
       <input onChange={this.updateChoice} type="radio" name={question.id} value={question.choiceOne}/>{question.choiceOne}<br/>
@@ -30,6 +31,7 @@ var Question = React.createClass({
         <input onChange={this.updateChoice} type="radio" name={question.id} value={question.choiceFour}/>{question.choiceFour}<br/>
         <input type="submit" value={"Answer Question #" + question.id}/><br/>
       </form>
+      </div>
     )
   }
 })

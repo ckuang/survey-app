@@ -1,26 +1,32 @@
-const path = require("path");
+const webpack = require('webpack');
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = {
-  context: __dirname,
-  entry: "./frontend/app.js",
+  entry: ["./frontend/app.js"],
   output: {
-    path: path.join(__dirname, '/public'),
-    filename: "bundle.js"
+    path: __dirname + "/front/bundle",
+    filename: "bundle.js",
+    devtoolModuleFilenameTemplate: '[resourcePath]',
+    devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
   },
   module: {
     loaders: [
       {
         test: [/\.jsx?$/, /\.js?$/],
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         loader: 'babel',
         query: {
-          presets: ['es2015', `react`]
+          presets: ['es2015', 'react']
         }
       }
     ]
   },
-  devtool: 'source-maps',
+  devtool: 'source-map',
   resolve: {
-    extensions: ["", ".js", ".jsx"]
-  }
+    extensions: ["", ".js", ".jsx" ]
+  },
+  plugins: [
+    new LiveReloadPlugin()
+  ]
 };
+

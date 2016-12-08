@@ -10,7 +10,7 @@ var Results = React.createClass({
     $.ajax({
       url: '/api/response',
       success: function(data) {
-        that.setState({responses: JSON.parse(data)})
+        that.setState({responses: data})
       }
     })
   },
