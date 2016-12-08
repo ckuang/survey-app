@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize');
-var sequelizeConnection = new Sequelize('postgres://nyapalgatkuoth@localhost:5432/survey-app')
+var Sequelize = require('sequelize')
+var sequelize = new Sequelize('postgres://nyapalgatkuoth@localhost:5432/survey-app')
 
 sequelize
   .authenticate()
@@ -8,6 +8,6 @@ sequelize
   })
   .catch(function (err) {
     console.log('Unable to connect to the database:', err);
-  });
+});
 
-module.exports = sequelizeConnection;
+module.exports = sequelize;

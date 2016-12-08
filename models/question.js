@@ -1,5 +1,6 @@
 var Sequelize = require('sequelize')
-var sequelizeConnection = require('../db.js')
+var sequelize = require('../db.js')
+
 
 var Question = sequelize.define('question', {
   title: {
