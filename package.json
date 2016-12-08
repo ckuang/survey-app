@@ -1,11 +1,11 @@
 {
-  "name": "survey-app",
+  "name": "music-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Create an api with the following endpoints:",
+  "main": "seed.js",
   "scripts": {
-    "start": "webpack --watch & nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch & nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,13 +18,18 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "jquery": "^3.1.1",
+    "nodemon": "^1.11.0",
     "pg": "^6.1.0",
     "pg-hstore": "^2.3.2",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-router": "^3.0.0",
     "sequelize": "^3.27.0",
-    "sequelize-cli": "^2.4.0",
-    "webpack": "^1.13.3"
+    "webpack": "^1.13.3",
+    "webpack-livereload-plugin": "^0.9.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.26.1"
+
   }
 }
