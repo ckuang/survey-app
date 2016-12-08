@@ -44,7 +44,7 @@ app.post('/api/question', (req, res) => {
   })
 })
 
-app.post('/api/question', (req, res) => {
+app.post('/api/response', (req, res) => {
   Response.create({resp: resp.body.response})
   .then((data) =>{
     res.send(data)
