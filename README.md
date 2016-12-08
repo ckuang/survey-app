@@ -12,10 +12,10 @@ You should be able to do the following things with your application.
 * See all the Responses.
 
 ## Setting up 
-* `$ npm install`
+<!-- * `$ npm install`
 * MAKE A DATABASE called `surveyapp`
 * CHANGE THE SEQUELIZE CONNECTION URI TO REFLECT YOUR NAME
-* `$ npm start`
+* `$ npm start` -->
 
 ## FrontEnd Explanation
 ### App Component
@@ -40,14 +40,14 @@ Fetches all responses from the database and displays the question and choice sel
 
 ## Instructions
 Here are some high-level steps to help you approach the project.
-* 1) Set up the Express server with all the routes. 
+<!-- * 1) Set up the Express server with all the routes. 
   - `/server.js`
-* 2) Test to see that each route works using Postman.  
-* 3) Set up the Sequelize database connection.
-  - `/server.js` 
-* 4) Generate the schema for the two models. **You have to create an association between Question and Response.**
+ -->* 2) Test to see that each route works using Postman.  
+<!-- * 3) Set up the Sequelize database connection.
+  - `/server.js` --> 
+<!-- * 4) Generate the schema for the two models. **You have to create an association between Question and Response.**
   - `models/question.js`
-  - `models/response.js` 
+  - `models/response.js -->` 
 * 5) Place Sequelize functions inside of the corresponding routes. For example, if you want to create a new `Question`, the Sequelize create function should be called within the `POST` - `/api/question` API endpoint.
   - `server.js` 
 * 6) Make sure you know what you are sending over in the response on the backend.
@@ -55,29 +55,29 @@ Here are some high-level steps to help you approach the project.
 
 ## Grading Rubric
 ###Express Server Routing
-* `GET` API endpoint to retrieve all Questions
+* `GET` API end<!-- point to retrieve all Questions
   - `/api/question`
 * `GET` API endpoint to retrieve all Responses
   - `/api/response`
 * `POST` API endpoint to create a Question
   - `/api/question`
 * `POST` API endpoint to create a Response
-  - `/api/response`
+  - `/api/response` -->
 
 ###Sequelize
-* Defining the correct schema for the Question model
+<!-- * Defining the correct schema for the Question model
   - Question: string
   - Choice1: string
   - Choice2: string
   - Choice3: string
-  - Choice4: string
-* Defining the correct schema for the Response model
-  - Choice: string
-  - QuestionID: integer (created through the association)
+  - Choice4: string -->
+<!-- * Defining the correct schema for the Response model -->
+  <!-- - Choice: string -->
+  <!-- - QuestionID: integer (created through the association) -->
 * Fetch all Questions
 * Fetch all Responses
 * Create a Question
 * Create a Response
-* Generate two associations
-  - Questions can have many responses
-  - Responses belong to one question
+<!-- * Generate two associations -->
+  <!-- - Questions can have many responses -->
+  <!-- - Responses belong to one question -->
