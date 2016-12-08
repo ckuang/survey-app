@@ -1,17 +1,20 @@
 var React = require('react')
 var $ = require('jquery')
+
 var Create = React.createClass({
   getInitialState: function () {
-    return({question: null, one: null, two: null, three: null, four: null})
+    return({question: null, choice1: null, choice2: null, choice3: null, choice4: null})
   },
   makeQuestion: function (e) {
     var info = this.state
+    console.log('info', info)
     $.ajax({
       url: "/api/question",
       type: "POST",
       data: info,
       success: function(data) {
         console.log(data)
+
       }
     })
   },
@@ -19,16 +22,16 @@ var Create = React.createClass({
     this.setState({question: e.currentTarget.value})
   },
   updateChoice1: function(e) {
-    this.setState({one: e.currentTarget.value})
+    this.setState({choice1: e.currentTarget.value})
   },
   updateChoice2: function(e) {
-    this.setState({two: e.currentTarget.value})
+    this.setState({choice2: e.currentTarget.value})
   },
   updateChoice3: function(e) {
-    this.setState({three: e.currentTarget.value})
+    this.setState({choice3: e.currentTarget.value})
   },
   updateChoice4: function(e) {
-    this.setState({four: e.currentTarget.value})
+    this.setState({choice4: e.currentTarget.value})
   },
   render: function() {
     return (
@@ -42,7 +45,7 @@ var Create = React.createClass({
           <input type="text" placeholder="choice2" onChange={this.updateChoice2}></input><br/>
           Write your third answer choice here:
           <input type="text" placeholder="choice3" onChange={this.updateChoice3}></input><br/>
-          Write your fourth answer choice here:
+          Write your choice4th answer choice here:
           <input type="text" placeholder="choice4" onChange={this.updateChoice4}></input><br/>
           <input type="submit" value="Make a New Question"></input>
         </form>
