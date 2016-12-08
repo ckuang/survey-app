@@ -21,7 +21,7 @@ var Answer = React.createClass({
       return(
         <div>
           {this.state.questions.map(function(question, idx){
-            return (<Question key={idx} question={question}/>)
+            return (<Question key={idx} question={question.question}/>)
           })}
         </div>
       )
