@@ -13,10 +13,9 @@ You should be able to do the following things with your application.
 
 ## Setting up 
 * `$ npm install`
-* `$ webpack -w`
 * MAKE A DATABASE called `surveyapp`
 * CHANGE THE SEQUELIZE CONNECTION URI TO REFLECT YOUR NAME
-* `$ nodemon server.js`
+* `$ npm start`
 
 ## FrontEnd Explanation
 ### App Component
