@@ -1,5 +1,6 @@
 var React = require('react')
 var $ = require('jquery')
+
 var Create = React.createClass({
   getInitialState: function () {
     return({question: null, one: null, two: null, three: null, four: null})
@@ -7,7 +8,7 @@ var Create = React.createClass({
   makeQuestion: function (e) {
     var info = this.state
     $.ajax({
-      url: "/api/question",
+      url: "/api/create",
       type: "POST",
       data: info,
       success: function(data) {

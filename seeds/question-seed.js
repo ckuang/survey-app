@@ -6,9 +6,9 @@ const Question = require('../models/question');
 Question.sync({force: true})
 //add the following three Questions to the database:
 .then(() => Question.bulkCreate([
-  {question: 'Q1'},
-  {question: 'Q2'},
-  {question: 'Q3'},
+  {question: 'Q1', choice1: "1", choice2: "2", choice3: "3", choice4: "4"},
+  {question: 'Q2', choice1: "4", choice2: "3", choice3: "2", choice4: "1"},
+  {question: 'Q3', choice1: "a", choice2: "b", choice3: "c", choice4: "d"},
 ]))
 //the following Questions should NOT be added to your database:
 //(if your validations are setup correctly)

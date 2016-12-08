@@ -2,19 +2,34 @@ const Sequelize = require('sequelize');
 const sequelizeConnection = require('../db');
 const Response = require('../models/response');
 
-//Artist.sync will create the artists table
+
+//Creating the "responses" table
 Response.sync({force: true})
-//add the following three Responses to the database:
+.then(() => sequelizeConnection.sync())
+.then((data) => Response.create(
+  {choice: '1', questionId: 1}
+))
+// .then((song) => {
+//   //use an automatically created 'accessor' method (addGenres) to add the genres
+//   song.addGenres([1, 3])
+// })
+.then(() => Response.create(
+  {choice: 'c', questionId: 2}
+))
+// .then((song) => {
+//   song.addGenres([2])
+// })
+.then(() => Response.create(
+  {choice: '4', questionId: 3}
+))
+// .then((song) => {
+//   song.addGenres([1])
+// })
+
+
+//the following responses should NOT be added:
 .then(() => Response.bulkCreate([
-  {response: 'R1'},
-  {response: 'R2'},
-  {response: 'R3'},
-]))
-//the following Responses should NOT be added to your database:
-//(if your validations are setup correctly)
-.then(() => Response.bulkCreate([
-  {response: ''},
-  {response: ['RR', 'RRR']},
+  {choice: ''},
+  {choice: ['2', 'b']},
 ], {validate: true}))
-// if everything is correct, you should only have THREE artists in your database
 .catch((err) => console.log(err));
