@@ -9,11 +9,12 @@ var Results = React.createClass({
     var that = this
     $.ajax({
       url: '/api/response',
+      type: 'GET',
       success: function(data) {
         that.setState({responses: JSON.parse(data)})
       }
     })
-  },
+  }, 
   render: function() {
     if (this.state.responses) {
       var responses = this.state.responses
