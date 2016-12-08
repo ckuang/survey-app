@@ -32,7 +32,7 @@ app.get('/api/question', (req,res)=>{
   })
 })
 //post answer
-app.post('/api/answer', (req,res)=>{
+app.post('/api/response', (req,res)=>{
   Response.create({
     answer: req.body.answer
   }).then(()=>{
@@ -41,7 +41,7 @@ app.post('/api/answer', (req,res)=>{
 });
 
 //get answer
-app.post('/api/answer', (req,res)=>{
+app.post('/api/response', (req,res)=>{
   Response.create({
     answer: req.body.answer
   }).then(()=>{

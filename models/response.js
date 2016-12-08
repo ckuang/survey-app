@@ -7,6 +7,6 @@ const Response = sequelizeConnection.define('response', {
 });
 
 Response.belongsTo(Question);
-Question.belongsToMany(Response, {through: 'Responses'});
+Question.hasMany(Response);
 
 module.exports = Response
