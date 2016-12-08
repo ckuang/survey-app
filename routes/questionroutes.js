@@ -30,8 +30,10 @@ const createQuestions = (req,res) =>{
 		choice2:req.body.two,
 		choice3:req.body.three,
 		choice4:req.body.four
-	})
+	}).then((data)=>{
+
 	res.send(req.body)
+	})
 	
 }
 

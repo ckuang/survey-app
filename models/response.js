@@ -5,7 +5,10 @@ var sequelizeConnection = require('../sequelizeConnection')
 
 
 var Response = sequelizeConnection.define('response',{
-	Choice: Sequelize.STRING(500)
+	ChoiceOne: Sequelize.STRING(500),
+	ChoiceTwo: Sequelize.STRING(500),
+	ChoiceThree: Sequelize.STRING(500),
+	ChoiceFour: Sequelize.STRING(500)
 })
 
 

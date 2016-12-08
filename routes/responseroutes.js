@@ -21,7 +21,7 @@ const createResponse = (req,res) =>{
 	var id = req.body.choice
 	console.log(req.body)
 	Response.create({
-		choice: req.body.choice
+		choice: req.body.choiceOne
 		// QuestionId:id
 	})
 	res.send(req.body.response)
