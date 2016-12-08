@@ -5,13 +5,14 @@ var Create = React.createClass({
     return({question: null, one: null, two: null, three: null, four: null})
   },
   makeQuestion: function (e) {
+    var that = this
     var info = this.state
     $.ajax({
       url: "/api/question",
       type: "POST",
       data: info,
       success: function(data) {
-        console.log(data)
+        that.setState(data)
       }
     })
   },
