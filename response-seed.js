@@ -8,7 +8,4 @@ Response.sync({force: true})
 .then((data) => Response.create(
   {answer: 'contemplating becoming a cleaner instead' }
 ))
-.then((answer) => {
-  answer.addQuestion([1])
-})
 .catch((err) => console.log(err));

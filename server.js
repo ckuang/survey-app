@@ -31,6 +31,23 @@ app.get('/api/question', (req,res)=>{
     res.send(data)
   })
 })
+//post answer
+app.post('/api/answer', (req,res)=>{
+  Response.create({
+    answer: req.body.answer
+  }).then(()=>{
+    res.send('new answer given')
+  })
+});
+
+//get answer
+app.post('/api/answer', (req,res)=>{
+  Response.create({
+    answer: req.body.answer
+  }).then(()=>{
+    res.send('new answer given')
+  })
+});
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, '/views/index.html'))
