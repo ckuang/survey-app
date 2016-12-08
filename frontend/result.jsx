@@ -10,17 +10,18 @@ var Results = React.createClass({
     $.ajax({
       url: '/api/response',
       success: function(data) {
-        that.setState({responses: JSON.parse(data)})
+        that.setState({responses: data})
       }
     })
   },
   render: function() {
+    console.log(this.state.responses)
     if (this.state.responses) {
       var responses = this.state.responses
     return (
       <div>
         {responses.map(function(response, idx){
-          var question = response.Question.question
+          var question = response.question.question
           var response = response.choice
           return(
             <div key={idx}> {question} : <strong>{response}</strong></div>
@@ -29,7 +30,7 @@ var Results = React.createClass({
       </div>
     )
     } else {
-       return(<div></div>)
+       return(<div>No Questions</div>)
      }
    }
 })
