@@ -30,7 +30,7 @@ app.get('/api/question', (req,res)=>{
   Question.findAll().then((data)=>{
     res.send(data)
   })
-})
+});
 //post answer
 app.post('/api/response', (req,res)=>{
   Response.create({
@@ -42,7 +42,7 @@ app.post('/api/response', (req,res)=>{
 
 //get answer
 app.post('/api/response', (req,res)=>{
-  Response.create({
+  Response.findAll({
     answer: req.body.answer
   }).then(()=>{
     res.send('new answer given')
