@@ -6,6 +6,7 @@ var Question = React.createClass({
     return({choice: null})
   },
   answerQuestion: function(e) {
+    e.preventDefault()
     var that = this
     $.ajax({
       url: "/api/response",

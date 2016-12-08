@@ -8,9 +8,10 @@ var Results = React.createClass({
   componentDidMount: function() {
     var that = this
     $.ajax({
+// JSON.stringify(data)
       url: '/api/response',
       success: function(data) {
-        that.setState({responses: JSON.parse(data)})
+        that.setState({responses: data})
       }
     })
   },

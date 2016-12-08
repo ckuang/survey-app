@@ -12,7 +12,7 @@ var Answer = React.createClass({
       url: '/api/question',
       type: 'GET',
       success: function(data) {
-        that.setState({questions: JSON.parse(data)})
+        that.setState({questions: data})
       }
     })
   },

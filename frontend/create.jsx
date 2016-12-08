@@ -5,20 +5,26 @@ var Create = React.createClass({
     return({question: null, one: null, two: null, three: null, four: null})
   },
   makeQuestion: function (e) {
+    e.preventDefault()
+    // event.prevent.Default()
     var info = this.state
     $.ajax({
       url: "/api/question",
       type: "POST",
       data: info,
       success: function(data) {
+        JSON.stringify(data)
         console.log(data)
       }
     })
   },
   updateQuestion: function(e) {
+    
+    console.log(e.target.value)
     this.setState({question: e.currentTarget.value})
   },
   updateChoice1: function(e) {
+    console.log(e.target.value)
     this.setState({one: e.currentTarget.value})
   },
   updateChoice2: function(e) {
