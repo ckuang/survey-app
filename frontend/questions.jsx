@@ -13,11 +13,13 @@ var Answer = React.createClass({
       type: 'GET',
       success: function(data) {
         that.setState({questions: JSON.parse(data)})
+        console.log(data)
       }
     })
   },
   render: function() {
   if(this.state.questions) {
+    console.log(this.state.questions)
       return(
         <div>
           {this.state.questions.map(function(question, idx){
