@@ -1,3 +1,7 @@
+////////////////
+//fetches all question from the database and passes each question down 
+///////////////
+
 var React = require('react')
 var $ = require('jquery')
 var Question = require('./question.jsx')

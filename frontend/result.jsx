@@ -1,3 +1,7 @@
+////////////////
+//Fetches all responses from the database and displays the question and choice selected for each response.
+////////////////
+
 var React = require('react')
 var $ = require('jquery')
 
