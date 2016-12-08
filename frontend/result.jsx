@@ -30,7 +30,7 @@ var Results = React.createClass({
       </div>
     )
     } else {
-       return(<div></div>)
+       return(<div>No Questions</div>)
      }
    }
 })
