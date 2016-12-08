@@ -18,9 +18,10 @@ var Answer = React.createClass({
   },
   render: function() {
   if(this.state.questions) {
+      var questions = this.state.questions
       return(
         <div>
-          {this.state.questions.map(function(question, idx){
+          {questions.map(function(question, idx){
             return (<Question key={idx} question={question}/>)
           })}
         </div>

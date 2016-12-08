@@ -1,5 +1,6 @@
-var React = require('react')
-var $ = require('jquery')
+var React = require('react');
+var $ = require('jquery');
+
 var Create = React.createClass({
   getInitialState: function () {
     return({question: null, one: null, two: null, three: null, four: null})
@@ -12,6 +13,7 @@ var Create = React.createClass({
       data: info,
       success: function(data) {
         console.log(data)
+        //this.setState({question: e.target.value }) //added 
       }
     })
   },
