@@ -1,3 +1,7 @@
+//////////////
+//Upon submission of the form, an AJAX request is sent to the server to create a new question.
+//////////////
+
 var React = require('react')
 var $ = require('jquery')
 var Create = React.createClass({

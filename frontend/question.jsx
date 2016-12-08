@@ -1,3 +1,7 @@
+//////////////
+//separate form is generated for each question. Every time you submit a question form, a new response should be created on the backend.
+///////////////
+
 var React = require('react')
 var $ = require('jquery')
 
