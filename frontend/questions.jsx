@@ -12,14 +12,12 @@ var Answer = React.createClass({
       url: '/api/question',
       type: 'GET',
       success: function(data) {
-        that.setState({questions: JSON.parse(data)})
-        console.log(data)
+        that.setState({questions: data})
       }
     })
   },
   render: function() {
   if(this.state.questions) {
-    console.log(this.state.questions)
       return(
         <div>
           {this.state.questions.map(function(question, idx){

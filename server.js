@@ -30,10 +30,10 @@ app.post('/api/question', (req, res) => {
   let info = req.body
   Question.create({
     question: info.question,
-    firstChoice: info.one,
-    secondChoice: info.two,
-    thirdChoice: info.three,
-    fourthChoice: info.four
+    choiceOne: info.one,
+    choiceTwo: info.two,
+    choiceThree: info.three,
+    choiceFour: info.four
   })
   .then(() => {
     res.send('Question has been created')

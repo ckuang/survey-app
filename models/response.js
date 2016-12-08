@@ -7,10 +7,10 @@ const Response = sequelizeConnection.define("response", {
   choice: Sequelize.STRING
 })
 
+Response.belongsTo(Question);
 Response.sync({force: false});
 
 
-// Response.belongsTo(Question);
 
 
 

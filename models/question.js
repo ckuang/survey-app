@@ -7,16 +7,16 @@ var Response = require('./response');
 
 const Question = sequelizeConnection.define("question", {
   question: Sequelize.STRING,
-  firstChoice: Sequelize.STRING,
-  secondChoice: Sequelize.STRING,
-  thirdChoice: Sequelize.STRING,
-  fourthChoice: Sequelize.STRING
+  choiceOne: Sequelize.STRING,
+  choiceTwo: Sequelize.STRING,
+  choiceThree: Sequelize.STRING,
+  choiceFour: Sequelize.STRING
 })
 
+// Question.belongsToMany(Response, {through: 'Question_Response'})
 Question.sync({force: false})
 
 //creates a responseId in the question table
-// Question.belongsToMany(Response, {through: 'Question_Response'})
 
 
 module.exports = Question;
