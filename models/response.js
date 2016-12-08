@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
-const sequelizeConnection = require('../server.js');
-const Artist = require('./question');
+const sequelizeConnection = require('../db.js');
+const Question = require('./question');
 
 
 var Response = sequelizeConnection.define('response',{
@@ -10,8 +10,8 @@ var Response = sequelizeConnection.define('response',{
 })
 
 
-Response.belongsToMany(Artist, {through: 'genre-song'})
-
+Response.belongsToMany(Question, {through: 'resp-quest'})
+Question.belongsToMany(Response)
 
 module.exports = Response;
 

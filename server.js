@@ -3,24 +3,20 @@ var app = express()
 var bodyparser = require('body-parser')
 var path = require('path')
 var Sequelize = require('sequelize') 
+var sequelizeConnection = require('./db');
 
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json())
 app.use(express.static('public'))
 
-var sequelizeConnection = new Sequelize('postgres://Ambar@localhost:5432/surveyapp');
+//var sequelizeConnection = new Sequelize('postgres://Ambar@localhost:5432/surveyapp');
 
 var Question = require('./models/question')
 var Restponse = require('./models/response')
 
-module.exports = sequelizeConnection;
 
 
-//Test to see if the connection worked
-sequelizeConnection
-.authenticate()
-.then((err) => console.log('Sequelize connection successful'))
-.cat
+
 
 
 

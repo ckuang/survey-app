@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelizeConnection = require('../server.js');
+const sequelizeConnection = require('../db.js');
 var Response = require('./response')
 
 var Question = sequelizeConnection.define('question',{
@@ -13,8 +13,7 @@ var Question = sequelizeConnection.define('question',{
 
 })
 
-Song.belongsTo(Question, {foreignKey: 'Song_id'});
-Question.hasMany(Song,{ foreignKey: 'album_id'});
+
 
 module.exports = Question
 
