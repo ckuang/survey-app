@@ -9,8 +9,9 @@ var Results = React.createClass({
     var that = this
     $.ajax({
       url: '/api/response',
+      type: 'GET',
       success: function(data) {
-        that.setState({responses: JSON.parse(data)})
+        that.setState({responses: data})
       }
     })
   },
@@ -20,8 +21,8 @@ var Results = React.createClass({
     return (
       <div>
         {responses.map(function(response, idx){
-          var question = response.Question.question
-          var response = response.choice
+          var question = response.id
+          var response = response.answer
           return(
             <div key={idx}> {question} : <strong>{response}</strong></div>
           )
