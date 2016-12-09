@@ -17,10 +17,11 @@ var Question = React.createClass({
     })
   },
   updateChoice: function(e) {
-    this.setState({choice: e.currentTarget.value})
+    this.setState({id: e.currentTarget.name, choice: e.currentTarget.value})
   },
   render: function() {
     var question = this.props.question
+
     return(
       <form onSubmit={this.answerQuestion}>
         {question.question}<br/>
