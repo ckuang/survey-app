@@ -14,8 +14,6 @@ const Question = sequelizeConnection.define("question", {
 })
 
 // Question.belongsToMany(Response, {through: 'Question_Response'})
-Question.sync({force: false})
-
 //creates a responseId in the question table
 
 

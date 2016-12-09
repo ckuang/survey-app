@@ -43,7 +43,11 @@ app.post('/api/question', (req, res) => {
 //This handles an api GET request that serves all responses to the page
 //RESULT COMPONENT
 app.get('/api/response', (req, res) => {
-  Response.findAll()
+  Response.findAll({
+    include: [{
+      model: Question
+    }]
+  })
   .then((responses) => {
     res.send(responses)
   })
@@ -57,7 +61,8 @@ app.post('/api/response', (req, res) => {
   Response.create({
     choice: choice
   })
-  .then(() => {
+  .then((choice) => {
+    choice.setQuestion(question)
     console.log('All responses have been saved to the database')
   })
 })

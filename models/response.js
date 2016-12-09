@@ -8,7 +8,6 @@ const Response = sequelizeConnection.define("response", {
 })
 
 Response.belongsTo(Question);
-Response.sync({force: false});
 
 
 
