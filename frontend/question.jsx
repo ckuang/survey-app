@@ -7,12 +7,14 @@ var Question = React.createClass({
   },
   answerQuestion: function(e) {
     var that = this
+    var propsId = that.props.question.id
     $.ajax({
       url: "/api/response",
       type: "POST",
-      data: {id: that.props.question.id, choice: that.state.choice},
+      data: { questionId: propsId, 
+              answer: that.state.choice},
       success: function(message) {
-        console.log(message)
+        console.log('from answerQuestion ajax success', message.propsId)
       }
     })
   },
@@ -21,13 +23,14 @@ var Question = React.createClass({
   },
   render: function() {
     var question = this.props.question
+    console.log('being rendered as props question id', question.id)
     return(
       <form onSubmit={this.answerQuestion}>
         {question.question}<br/>
-      <input onChange={this.updateChoice} type="radio" name={question.id} value={question.choiceOne}/>{question.choiceOne}<br/>
-        <input onChange={this.updateChoice} type="radio" name={question.id} value={question.choiceTwo}/>{question.choiceTwo}<br/>
-        <input onChange={this.updateChoice} type="radio" name={question.id} value={question.choiceThree}/>{question.choiceThree}<br/>
-        <input onChange={this.updateChoice} type="radio" name={question.id} value={question.choiceFour}/>{question.choiceFour}<br/>
+      <input onChange={this.updateChoice} type="radio" name={question.id} value={question.choice1}/>{question.choice1}<br/>
+        <input onChange={this.updateChoice} type="radio" name={question.id} value={question.choice2}/>{question.choice2}<br/>
+        <input onChange={this.updateChoice} type="radio" name={question.id} value={question.choice3}/>{question.choice3}<br/>
+        <input onChange={this.updateChoice} type="radio" name={question.id} value={question.choice4}/>{question.choice4}<br/>
         <input type="submit" value={"Answer Question #" + question.id}/><br/>
       </form>
     )

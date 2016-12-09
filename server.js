@@ -34,18 +34,20 @@ app.get('/api/question', (req,res)=>{
 //post answer
 app.post('/api/response', (req,res)=>{
   Response.create({
-    answer: req.body.answer
+    answer: req.body.answer,
+    questionId: req.body.questionId
   }).then(()=>{
     res.send('new answer given')
   })
 });
 
 //get answer
-app.post('/api/response', (req,res)=>{
+app.get('/api/response', (req,res)=>{
   Response.findAll({
-    answer: req.body.answer
-  }).then(()=>{
-    res.send('new answer given')
+          include: [{
+        model: Question}]
+  }).then((data)=>{
+    res.send(data)
   })
 });
 
