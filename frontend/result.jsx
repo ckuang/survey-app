@@ -3,14 +3,18 @@ var $ = require('jquery')
 
 var Results = React.createClass({
   getInitialState: function() {
-    return({responses: null})
+    return({responses: []})
   },
   componentDidMount: function() {
     var that = this
+    var input2;
     $.ajax({
       url: '/api/response',
+      type: 'GET',
       success: function(data) {
-        that.setState({responses: JSON.parse(data)})
+        input2 = data
+        console.log('input2:',input2)
+        that.setState({responses: input2})
       }
     })
   },
@@ -20,10 +24,13 @@ var Results = React.createClass({
     return (
       <div>
         {responses.map(function(response, idx){
-          var question = response.Question.question
+          console.log('questionId:',response.questionId)
+          var question = response.question.question
+          const questNum = response.questionId
+         
           var response = response.choice
           return(
-            <div key={idx}> {question} : <strong>{response}</strong></div>
+            <div key={idx}> Question #{questNum} -  {question} : <strong>{response}</strong></div>
           )
         })}
       </div>

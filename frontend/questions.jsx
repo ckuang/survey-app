@@ -8,11 +8,14 @@ var Answer = React.createClass({
   },
   componentDidMount: function() {
     var that = this
+    let input;
     $.ajax({
       url: '/api/question',
       type: 'GET',
       success: function(data) {
-        that.setState({questions: JSON.parse(data)})
+        input = data
+        console.log('input:', input)
+        that.setState({questions: input})
       }
     })
   },
