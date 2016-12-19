@@ -59,7 +59,8 @@ router.route('/question')
 router.route('/response')
 	.post(function(req,res) {
 		Response.create({
-			choice: req.body.choice
+			choice: req.body.choice,
+			questionId: req.body.id
 		})
 		.then(function(data) {
 			console.log('Response created')
